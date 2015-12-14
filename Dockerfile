@@ -25,8 +25,6 @@ RUN \
 ADD root /
 RUN \
   chmod 770 -R /config && \
-  chmod 770 -R /etc/supervisor.d && \
-  chown nobody:nobody /var/log/supervisord.log && \
-  chown nobody:nobody -R /var/run/supervisord
+  chmod 770 -R /etc/supervisor.d
 
 ENTRYPOINT ["/config/bootstrap.sh"]
