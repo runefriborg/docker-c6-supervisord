@@ -1,0 +1,11 @@
+Create a file named "daemon-name.conf" with the following content
+
+[program:daemon-name]
+command=/usr/bin/foreground-daemon
+stdout_logfile=/var/log/supervisor/%(program_name)s.log
+stderr_logfile=/var/log/supervisor/%(program_name)s.log
+autostart=true
+autorestart=false
+startretries=0
+stopwaitsecs=1
+exitcodes=0,1,2

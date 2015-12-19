@@ -1,0 +1,12 @@
+Add init scripts *.sh here to configure the container before supervisord is started.
+
+eg.
+
+10_iotuning.sh
+20_DNS.sh
+30_connect_to_server.sh
+
+
+bootstrap.sh must be configured as the entrypoint for this to work.
+# Default in the docker-c6-supervisord container
+#ENTRYPOINT ["/config/bootstrap.sh"]
