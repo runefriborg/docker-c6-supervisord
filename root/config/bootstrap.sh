@@ -12,7 +12,7 @@ SUPERVISOR_PARAMS='-c /etc/supervisord.conf'
 mkdir -p /data/conf /data/run /data/logs
 chmod 711 /data/conf /data/run /data/logs
 
-if [ "$(ls /config/init/)" ]; then
+if [ "$(ls /config/init/*.sh)" ]; then
   for init in /config/init/*.sh; do
     . $init
   done
