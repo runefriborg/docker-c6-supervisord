@@ -12,13 +12,6 @@ SUPERVISOR_PARAMS='-c /etc/supervisord.conf'
 mkdir -p /data/conf /data/run /data/logs
 chmod 711 /data/conf /data/run /data/logs
 
-if [ "$(ls /config/init/*.sh)" ]; then
-  for init in /config/init/*.sh; do
-    . $init
-  done
-fi
-
-
 # We have TTY, so probably an interactive container...
 if test -t 0; then
   # Run supervisord detached...
